@@ -1,0 +1,18 @@
+{
+  "extends": ["@rocketseat/eslint-config/react"],
+  "plugins": ["simple-import-sort", "unused-imports", "react-hooks", "react-refresh"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

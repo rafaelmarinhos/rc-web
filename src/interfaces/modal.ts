@@ -1,0 +1,13 @@
+export type ModalType =
+  | 'CREATE'
+  | 'EDIT'
+  | 'DELETE'
+  | 'FILTER'
+  | 'CHANGE-STATUS'
+  | 'LOADING'
+  | 'DETAIL'
+  | 'UPLOAD'
+  | 'DUE-DATE'
+  | 'APPROVE'
+  | 'GENERATE'
+  | 'UPDATE-REDUCTION'

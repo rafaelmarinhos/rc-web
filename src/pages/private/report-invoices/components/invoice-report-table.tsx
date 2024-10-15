@@ -1,5 +1,6 @@
 import { memo } from 'react'
 
+import { Badge } from '@/components/ui/badge'
 import { InvoiceReport } from '@/interfaces/invoiceReport'
 import { ModalType } from '@/interfaces/modal'
 import { ISOStringToDate } from '@/utils/format'
@@ -11,6 +12,15 @@ interface Props {
 }
 
 export const InvoiceReportTable = memo(({ data, loading }: Props) => {
+  const badgeStatus = (status: string) => {
+    if (status === 'Pago') return <Badge text={status} variant="green" />
+    if (status === 'Em aberto') return <Badge text={status} variant="red" />
+    if (status === 'Em atraso') return <Badge text={status} variant="red" />
+    if (status === 'Aguardando aprovação')
+      return <Badge text={status} variant="yellow" />
+    return <Badge text={status} />
+  }
+
   return (
     <div className="overflow-y-auto rounded-t-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
       <div className="sticky top-0 bg-white">
@@ -39,7 +49,7 @@ export const InvoiceReportTable = memo(({ data, loading }: Props) => {
           <div className="col-span-1 flex items-center">
             <p className="font-medium">Status</p>
           </div>
-          <div className="col-span-1 flex items-center">
+          <div className="col-span-1 ml-2 flex items-center">
             <p className="font-medium">Pagamento</p>
           </div>
           <div className="col-span-1 flex items-center">
@@ -103,9 +113,9 @@ export const InvoiceReportTable = memo(({ data, loading }: Props) => {
             </p>
           </div>
           <div className="col-span-1 flex items-center">
-            <p className="text-sm text-black dark:text-white">{item.status}</p>
+            {badgeStatus(item.status)}
           </div>
-          <div className="col-span-1 flex items-center">
+          <div className="col-span-1 ml-2 flex items-center">
             <p className="text-sm text-black dark:text-white">
               {item.dateOfPayment
                 ? ISOStringToDate(item.dateOfPayment.toString())

@@ -17,7 +17,7 @@ export const useFetchCustomers = (): Props => {
   const [page, setPage] = useState(1)
   const [pageItems, setPageItems] = useState<Customer[]>([])
   const [totalItems, setTotalItems] = useState<Customer[]>([])
-  const [itemsPerPage, setItemsPerPage] = useState(40)
+  const [itemsPerPage] = useState(40)
   const [totalPages, setTotalPages] = useState(0)
 
   const values = useModal((state: ModalState<ModalType>) => state.value)
@@ -42,7 +42,7 @@ export const useFetchCustomers = (): Props => {
     handleItemsPerPage()
   }, [totalItems, handleItemsPerPage])
 
-  const { isLoading, isRefetching, data, isFetching, isPending } = useQuery<
+  const { isLoading, isRefetching, isFetching, isPending } = useQuery<
     CustomerResponse | undefined
   >({
     queryKey: [`fetch-customers-$${filter}`],

@@ -62,9 +62,41 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           <Input
             id="Search"
             label="Pesquisar"
-            placeholder="Nome, N° RC ou N° Sicoob"
+            placeholder="Nome do cliente"
             className="w-72"
             {...register('customerFilter')}
+          />
+
+          <Controller
+            control={control}
+            name={'paymentType'}
+            render={({ field: { onChange, value } }) => (
+              <Select
+                items={paymentType}
+                placeholder="Selecione"
+                label="Tipo de Pagamento"
+                defaultValue="Selecione"
+                value={value}
+                onValueChange={onChange}
+              />
+            )}
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-4">
+          <Input
+            id="rcNumber"
+            label="Pesquisar"
+            placeholder="N° RC"
+            className="w-72"
+            {...register('rcNumber')}
+          />
+          <Input
+            id="sicoobNumber"
+            label="Pesquisar"
+            placeholder="N° Sicooob"
+            className="w-72"
+            {...register('sicoobNumber')}
           />
         </div>
 
@@ -147,23 +179,6 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
             }}
           />
         </div>
-      </ModalContent>
-
-      <ModalContent>
-        <Controller
-          control={control}
-          name={'paymentType'}
-          render={({ field: { onChange, value } }) => (
-            <Select
-              items={paymentType}
-              placeholder="Selecione"
-              label="Tipo de Pagamento"
-              defaultValue="Selecione"
-              value={value}
-              onValueChange={onChange}
-            />
-          )}
-        />
       </ModalContent>
 
       <ModalContent className="mt-4">

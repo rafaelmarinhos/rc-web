@@ -53,7 +53,7 @@ export const useFetchInvoiceReport = (
     return safeData
   }, [formMethods])
 
-  const { isLoading, isRefetching, isFetching, isError, refetch } = useQuery<
+  const { isLoading, isRefetching, isFetching, refetch } = useQuery<
     InvoiceReport[]
   >({
     queryKey: [`fetch-report-invoices`],

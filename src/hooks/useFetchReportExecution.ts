@@ -25,7 +25,7 @@ export const useFetchReportExecution = (): Props => {
   const [page, setPage] = useState(1)
   const [pageItems, setPageItems] = useState<ReportExecution[]>([])
   const [totalItems, setTotalItems] = useState<ReportExecution[]>([])
-  const [itemsPerPage, setItemsPerPage] = useState(40)
+  const [itemsPerPage] = useState(40)
   const [totalPages, setTotalPages] = useState(0)
 
   const closeModal = useModal(
@@ -58,7 +58,7 @@ export const useFetchReportExecution = (): Props => {
     return data
   }, [form])
 
-  const { isLoading, isRefetching, data, isFetching, isPending } = useQuery<
+  const { isLoading, isRefetching, isFetching, isPending } = useQuery<
     ReportExecution[] | undefined
   >({
     queryKey: [`fetch-report-execution`],

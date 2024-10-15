@@ -80,11 +80,7 @@ export const InvoiceReport = () => {
       <Page>
         <div className="mb-4 flex flex-col gap-6">
           <div className="flex justify-end gap-2">
-            <Button
-              size="sm"
-              className="w-16"
-              onClick={handleGeneratePDF} // Updated to use handleGeneratePDF
-            >
+            <Button size="sm" className="w-16" onClick={handleGeneratePDF}>
               <Download
                 width={20}
                 height={20}

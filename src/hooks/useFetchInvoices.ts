@@ -25,7 +25,7 @@ export const useFetchInvoices = (): Props => {
   const [page, setPage] = useState(1)
   const [pageItems, setPageItems] = useState<Invoice[]>([])
   const [totalItems, setTotalItems] = useState<Invoice[]>([])
-  const [itemsPerPage, setItemsPerPage] = useState(40)
+  const [itemsPerPage] = useState(40)
   const [totalPages, setTotalPages] = useState(0)
 
   const closeModal = useModal(
@@ -56,7 +56,7 @@ export const useFetchInvoices = (): Props => {
     return data
   }, [form])
 
-  const { isLoading, isRefetching, data, isFetching, isPending } = useQuery<
+  const { isLoading, isRefetching, isFetching, isPending } = useQuery<
     Invoice[] | undefined
   >({
     queryKey: [`fetch-invoices`],

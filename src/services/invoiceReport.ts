@@ -49,9 +49,9 @@ export const invoiceReport = {
         },
       },
     })
-
     return response
   },
+  
   getPDF: async (params: ReportInvoicesSchemaFormType): Promise<Blob> => {
     const response: any = await get({
       url: '/report/invoices/pdf',

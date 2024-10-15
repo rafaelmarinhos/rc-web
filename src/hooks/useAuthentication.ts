@@ -18,11 +18,9 @@ interface Props {
 
 export const useAuthentication = (): Props => {
   const [passwordType, setPasswordType] = useState('password')
-
   const form = useForm<AuthenticationFormType>({
     resolver: zodResolver(authenticationFormSchema),
   })
-
   const { handleSubmit } = form
 
   const { mutateAsync: authenticate } = useMutation({

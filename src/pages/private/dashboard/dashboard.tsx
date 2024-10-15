@@ -8,56 +8,32 @@ export const Dashboard = () => {
   return (
     <Page>
       <div className="flex flex-col space-y-10 rounded-md">
-        <DataStatistic.Container title="Totalizadores gerais">
+        <DataStatistic.Container title="Totalizadores">
           <DataStatistic.Item
-            text="Total de clientes"
+            text="Total de Cooperados"
             value={data?.totalCustomers}
             loading={isFetching}
           />
-          <DataStatistic.Item
-            text="Total de energia fornecida"
-            value={data?.totalEnergySupplied}
-            loading={isFetching}
-          />
-          <DataStatistic.Item
+          {/* <DataStatistic.Item
             text="Total de energia injetada"
             value={data?.totalEnergyInjected}
             loading={isFetching}
-          />
+          /> */}
           <DataStatistic.Item
-            text="Total de faturas geradas"
+            text="Quantidade de faturas geradas"
             value={data?.totalInvoices}
-            loading={isFetching}
-            showDivider={false}
-          />
-        </DataStatistic.Container>
-
-        <DataStatistic.Container title="Faturas">
-          <DataStatistic.Item
-            text="Total gerado"
-            value={data?.totalInvoicesValue}
-            loading={isFetching}
+            loading={isFetching}            
           />
           <DataStatistic.Item
-            text="Aguardando Aprovação"
-            value={data?.totalInvoicesWaitingApprovalValue}
-            loading={isFetching}
-          />
-          <DataStatistic.Item
-            text="Pagas"
+            text="Valor de faturas pagas"
             value={data?.totalInvoicesPaidValue}
             loading={isFetching}
           />
           <DataStatistic.Item
-            text="À Receber"
-            value={data?.totalInvoicesPaymentPendingValue}
-            loading={isFetching}
-            showDivider={false}
-          />
-          <DataStatistic.Item
-            text="Em Atraso"
+            text="Valor de faturas em atraso"
             value={data?.totalInvoicesOverdueValue}
             loading={isFetching}
+            showDivider={false}
           />
         </DataStatistic.Container>
       </div>

@@ -18,8 +18,8 @@ interface Props {
 export const InvoiceTable = memo(
   ({ data, loading, action, getFile }: Props) => {
     const statusBadge = (status: keyof typeof Status) => {
-      if (status === 1) return <Badge text={Status[status]} variant="orange" />
-      if (status === 2) return <Badge text={Status[status]} variant="yellow" />
+      if (status === 1) return <Badge text={Status[status]} variant="yellow" />
+      if (status === 2) return <Badge text={Status[status]} variant="orange" />
       if (status === 3) return <Badge text={Status[status]} />
       if (status === 4) return <Badge text={Status[status]} variant="red" />
       return <Badge text={Status[status]} />

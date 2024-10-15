@@ -14,7 +14,7 @@ interface Props {
 export const InvoiceReportTable = memo(({ data, loading }: Props) => {
   const badgeStatus = (status: string) => {
     if (status === 'Pago') return <Badge text={status} variant="green" />
-    if (status === 'Em aberto') return <Badge text={status} variant="red" />
+    if (status === 'Em aberto') return <Badge text={status} variant="orange" />
     if (status === 'Em atraso') return <Badge text={status} variant="red" />
     if (status === 'Aguardando aprovação')
       return <Badge text={status} variant="yellow" />

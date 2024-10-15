@@ -51,12 +51,12 @@ export const EditCustomer = () => {
 
   return (
     <ModalPage title={title}>
-      <ModalContent title="Dados pessoais" className="mt-8">
+      <ModalContent title="Dados Pessoais" className="mt-8">
         <div className="flex flex-wrap gap-4">
           <Input
             label="Nome"
             id="nome"
-            placeholder="Ex.: Maria da Silva"
+            placeholder="Nome do cliente"
             className="w-72"
             error={form.formState.errors.name?.message}
             {...register('name')}
@@ -64,7 +64,7 @@ export const EditCustomer = () => {
           <Input
             label="CPF / CNPJ"
             id="cpf"
-            placeholder="Ex.: 000.000.000-00"
+            placeholder="000.000.000-00"
             className="w-72"
             error={form.formState.errors.document?.message}
             value={getDocumentMask(document)}
@@ -77,7 +77,7 @@ export const EditCustomer = () => {
             id="nascimento"
             label="Data de nascimento"
             className="w-72"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             value={dayMonthYearMask(birthDate)}
             {...register('birthDate')}
           />
@@ -101,7 +101,7 @@ export const EditCustomer = () => {
         <Input
           label="Unidade Consumidora"
           id="uc"
-          placeholder="Ex.: 123"
+          placeholder="0"
           className="w-72"
           error={form.formState.errors.uc?.message}
           {...register('uc')}
@@ -113,7 +113,7 @@ export const EditCustomer = () => {
           <Input
             label="Credito negociado (kW)"
             id="credito"
-            placeholder="Ex.: 0"
+            placeholder="0"
             className="w-72"
             error={form.formState.errors.creditNegotiated?.message}
             {...register('creditNegotiated')}
@@ -121,7 +121,7 @@ export const EditCustomer = () => {
           <Input
             label="Desconto (%)"
             id="desconto"
-            placeholder="Ex.: 0"
+            placeholder="0"
             className="w-72"
             error={form.formState.errors.discount?.message}
             {...register('discount')}
@@ -132,7 +132,7 @@ export const EditCustomer = () => {
           <Input
             label="Código do cooperado"
             id="code"
-            placeholder="Ex.: 000"
+            placeholder="0"
             className="w-72"
             error={form.formState.errors.auxiliaryCode?.message}
             {...register('auxiliaryCode')}
@@ -175,7 +175,7 @@ export const EditCustomer = () => {
           <Input
             label="Cidade"
             id="nome"
-            placeholder="Ex.: São Paulo"
+            placeholder="Digite a cidade"
             className="w-72"
             error={form.formState.errors.addressCity?.message}
             {...register('addressCity')}
@@ -183,7 +183,7 @@ export const EditCustomer = () => {
           <Input
             label="UF"
             id="uf"
-            placeholder="Ex.: SP"
+            placeholder="Digite a UF"
             className="w-72"
             maxLength={10}
             error={form.formState.errors.addressUF?.message}
@@ -195,7 +195,7 @@ export const EditCustomer = () => {
           <Input
             label="Rua"
             id="nome"
-            placeholder="Ex.: Rua das Alamedas"
+            placeholder="Digite a rua"
             className="w-72"
             error={form.formState.errors.address?.message}
             {...register('address')}
@@ -203,7 +203,7 @@ export const EditCustomer = () => {
           <Input
             label="Bairro"
             id="nome"
-            placeholder="Ex.: Bairro das Alamedas"
+            placeholder="Digite o bairro"
             className="w-72"
             error={form.formState.errors.addressDistrict?.message}
             {...register('addressDistrict')}
@@ -214,7 +214,7 @@ export const EditCustomer = () => {
           <Input
             label="Número"
             id="nome"
-            placeholder="Ex.: 123"
+            placeholder="Digite a número"
             className="w-72"
             error={form.formState.errors.addressNumber?.message}
             {...register('addressNumber')}
@@ -222,7 +222,7 @@ export const EditCustomer = () => {
           <Input
             label="CEP"
             id="cpf"
-            placeholder="Ex.: 00000-000"
+            placeholder="00000-000"
             className="w-72"
             maxLength={10}
             value={cepMask(cep)}

@@ -18,19 +18,19 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
   const paymentType: SelectOption[] = [
     {
       label: 'Via PIX',
-      value: 'Via PIX',
+      value: 'VIA PIX',
     },
     {
       label: 'Via Compensacao',
-      value: 'Via Compensacao',
+      value: 'VIA COMPENSAÇÃO',
     },
     {
       label: 'Intercreds',
-      value: 'Intercreds',
+      value: 'INTERCREDIS',
     },
     {
       label: 'Via Sistema RC',
-      value: 'Via Sistema RC',
+      value: 'VIA SISTEMA RC',
     },
   ]
 
@@ -61,8 +61,8 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
         <div className="flex flex-wrap gap-4">
           <Input
             id="Search"
-            label="Pesquisar"
-            placeholder="Nome do cliente"
+            label="Cliente"
+            placeholder="Nome, documento ou UC"
             className="w-72"
             {...register('customerFilter')}
           />
@@ -86,15 +86,15 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
         <div className="flex flex-wrap gap-4">
           <Input
             id="rcNumber"
-            label="Pesquisar"
-            placeholder="N° RC"
+            label="N° RC"
+            placeholder="0"
             className="w-72"
             {...register('rcNumber')}
           />
           <Input
             id="sicoobNumber"
-            label="Pesquisar"
-            placeholder="N° Sicooob"
+            label="N° Sicooob"
+            placeholder="0"
             className="w-72"
             {...register('sicoobNumber')}
           />
@@ -105,7 +105,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
             id="date-initial-issue"
             label="Data inicial da emissão"
             className="w-72"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             value={dateOfIssueStart}
             {...register('dateOfIssueStart')}
             onChange={(e) => {
@@ -118,7 +118,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
             id="date-final-issue"
             label="Data final da emissão"
             className="w-72"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             value={dateOfIssueFinish}
             {...register('dateOfIssueFinish')}
             onChange={(e) => {
@@ -131,7 +131,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           <Input
             id="date-initial-due"
             label="Data inicial do vencimento"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             className="w-72"
             value={dueDateStart}
             {...register('dueDateStart')}
@@ -143,7 +143,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           <Input
             id="date-final-due"
             label="Data final do vencimento"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             className="w-72"
             value={dueDateFinish}
             {...register('dueDateFinish')}
@@ -157,7 +157,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           <Input
             id="date-initial-payment"
             label="Data inicial do pagamento"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             className="w-72"
             value={dateOfPaymentStart}
             {...register('dateOfPaymentStart')}
@@ -169,7 +169,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           <Input
             id="date-final-payment"
             label="Data final do pagamento"
-            placeholder="DD/MM/AAAA"
+            placeholder="dd/mm/yyyy"
             className="w-72"
             value={dateOfPaymentFinish}
             {...register('dateOfPaymentFinish')}
@@ -181,7 +181,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
         </div>
       </ModalContent>
 
-      <ModalContent className="mt-4">
+      {/* <ModalContent className="mt-4">
         <Controller
           control={control}
           name={'includeWaitingApproval'}
@@ -195,9 +195,9 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
             />
           )}
         />
-      </ModalContent>
+      </ModalContent> */}
 
-      <ModalContent className="mt-4">
+      <ModalContent className="mt-2">
         <Controller
           control={control}
           name={'includePaymentPending'}
@@ -205,7 +205,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           render={({ field: { onChange, value } }) => (
             <Checkbox
               options={options}
-              label="Incluir faturas com pagamento pendente?"
+              label="Faturas em aberto"
               onChange={onChange}
               checked={value ? 'true' : 'false'}
             />
@@ -221,7 +221,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           render={({ field: { onChange, value } }) => (
             <Checkbox
               options={options}
-              label="Incluir faturas pagas?"
+              label="Faturas pagas"
               onChange={onChange}
               checked={value ? 'true' : 'false'}
             />
@@ -237,7 +237,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           render={({ field: { onChange, value } }) => (
             <Checkbox
               options={options}
-              label="Incluir faturas em atraso?"
+              label="Faturas em atraso"
               onChange={onChange}
               checked={value ? 'true' : 'false'}
             />
@@ -253,7 +253,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
           render={({ field: { onChange, value } }) => (
             <Checkbox
               options={options}
-              label="Incluir faturas canceladas?"
+              label="Faturas baixadas"
               onChange={onChange}
               checked={value ? 'true' : 'false'}
             />

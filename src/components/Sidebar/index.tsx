@@ -60,6 +60,31 @@ export const Sidebar = () => {
                 </NavLink>
               </li>
 
+              <li>
+                <NavLink
+                  to={ROUTES.EXECUTION_REPORT}
+                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('relatorios/execucao') &&
+                    'bg-graydark dark:bg-meta-4'
+                  }`}
+                >
+                  <Settings size={20} />
+                  Gestão de Execuções
+                </NavLink>
+              </li>
+
+              <li>
+                <NavLink
+                  to={ROUTES.INVOICES_MANAGEMENT}
+                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes('faturas') && 'bg-graydark dark:bg-meta-4'
+                  }`}
+                >
+                  <Landmark size={20} />
+                  Gestão de Faturas
+                </NavLink>
+              </li>
+
               <SidebarLinkGroup>
                 {(handleClick, open) => {
                   return (
@@ -68,7 +93,7 @@ export const Sidebar = () => {
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
                           (pathname === '/' ||
-                            pathname.includes('relatorios')) &&
+                            pathname.includes('relatorios/financeiro')) &&
                           'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
@@ -90,32 +115,13 @@ export const Sidebar = () => {
                         <ul className="mb-5 mt-4 flex flex-col gap-2 pl-6">
                           <li>
                             <NavLink
-                              to={ROUTES.EXECUTION_REPORT}
-                              className={({ isActive }) =>
-                                'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
-                                (isActive && '!text-white')
-                              }
-                            >
-                              Relatório de execução
-                            </NavLink>
-                          </li>
-                        </ul>
-                      </div>
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
-                        <ul className="mb-5 flex flex-col gap-2 pl-6">
-                          <li>
-                            <NavLink
                               to={ROUTES.INVOICES_REPORT}
                               className={({ isActive }) =>
                                 'group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ' +
                                 (isActive && '!text-white')
                               }
                             >
-                              Relatório financeiro
+                              Relatório Financeiro
                             </NavLink>
                           </li>
                         </ul>
@@ -124,18 +130,6 @@ export const Sidebar = () => {
                   )
                 }}
               </SidebarLinkGroup>
-
-              <li>
-                <NavLink
-                  to={ROUTES.INVOICES_MANAGEMENT}
-                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('faturas') && 'bg-graydark dark:bg-meta-4'
-                  }`}
-                >
-                  <Landmark size={20} />
-                  Faturas
-                </NavLink>
-              </li>
 
               <li>
                 <NavLink

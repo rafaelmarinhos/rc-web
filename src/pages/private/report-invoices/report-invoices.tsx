@@ -15,8 +15,8 @@ import { downloadBlob } from '@/utils/downloadFile'
 import { InvoicesReportFilter } from './components/filter'
 import { InvoiceReportTable } from './components/invoice-report-table'
 import {
-  reportInvoicesFilterFormSchema,
-  ReportInvoicesSchemaFormType,
+    reportInvoicesFilterFormSchema,
+    ReportInvoicesSchemaFormType,
 } from './schema'
 
 export const InvoiceReport = () => {
@@ -34,7 +34,7 @@ export const InvoiceReport = () => {
       dateOfPaymentFinish: '',
       paymentType: '',
       includeWaitingApproval: true,
-      inclusePaymentPending: true,
+      includePaymentPending: true,
       includePaid: true,
       includeOverdue: true,
       includeCanceled: true,

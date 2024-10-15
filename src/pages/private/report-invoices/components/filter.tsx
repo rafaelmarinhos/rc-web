@@ -200,7 +200,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
       <ModalContent className="mt-4">
         <Controller
           control={control}
-          name={'inclusePaymentPending'}
+          name={'includePaymentPending'}
           defaultValue={true}
           render={({ field: { onChange, value } }) => (
             <Checkbox
@@ -277,7 +277,7 @@ export const InvoicesReportFilter = ({ onSearch }: Props) => {
             resetField('dateOfPaymentFinish')
             resetField('paymentType')
             resetField('includeWaitingApproval', { defaultValue: true })
-            resetField('inclusePaymentPending', { defaultValue: true })
+            resetField('includePaymentPending', { defaultValue: true })
             resetField('includePaid', { defaultValue: true })
             resetField('includeOverdue', { defaultValue: true })
             resetField('includeCanceled', { defaultValue: true })

@@ -12,7 +12,7 @@ export const reportInvoicesFilterFormSchema = z.object({
   dateOfPaymentFinish: z.string().optional(),
   paymentType: z.string().optional(),
   includeWaitingApproval: z.boolean().default(true),
-  inclusePaymentPending: z.boolean().default(true),
+  includePaymentPending: z.boolean().default(true),
   includePaid: z.boolean().default(true),
   includeOverdue: z.boolean().default(true),
   includeCanceled: z.boolean().default(true),
